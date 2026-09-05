@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Causes of Drum Mic Comb Filtering - music-production</title>
+    <meta name="description" content="Comb filtering is a severe acoustic and phase-related challenge encountered during multi-microphone drum kit tracking, leading to unnatural, hollow, or thinned audio signals. This article examines the primary acoustic mechanisms that cause this phenomeno">
+    <link rel="canonical" href="https://salivity.github.io/music-production/article/causes-of-drum-mic-comb-filtering">
+    <link rel="icon" href="/music-production/favicon.ico">
+    <link rel="stylesheet" href="/music-production/css/style.css">
+    <link media="print" rel="stylesheet" href="/music-production/css/print.css">
+    <script src="/music-production/js/fuse.min.js"></script>
+    <script src="/music-production/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Causes of Drum Mic Comb Filtering - music-production" />
+    <meta property="og:url" content="https://salivity.github.io/music-production/article/causes-of-drum-mic-comb-filtering" />
+    <meta property="og:image:url" content="https://salivity.github.io/music-production/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/music-production/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Comb filtering is a severe acoustic and phase-related challenge encountered during multi-microphone drum kit tracking, leading to unnatural, hollow, or thinned audio signals. This article examines the primary acoustic mechanisms that cause this phenomeno" />
+    <link rel="manifest" href="/music-production/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/music-production/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>music-production</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/music-production/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="causes-of-drum-mic-comb-filtering">Causes of Drum Mic Comb
+Filtering</h1>
+<p>Comb filtering is a severe acoustic and phase-related challenge
+encountered during multi-microphone drum kit tracking, leading to
+unnatural, hollow, or thinned audio signals. This article examines the
+primary acoustic mechanisms that cause this phenomenon, including
+arrival-time discrepancies across multiple capsules, room and boundary
+reflections, bleed from adjacent instruments, and dual-microphone
+techniques on single drum elements. Understanding these acoustic
+interactions enables audio engineers to position microphones
+strategically and preserve the natural punch and clarity of a recorded
+drum performance.</p>
+<h3 id="arrival-time-discrepancies-and-bleed-across-open-mics">Arrival
+Time Discrepancies and Bleed Across Open Mics</h3>
+<p>The most common cause of comb filtering in drum production is
+acoustic bleed coupled with varying path lengths to multiple
+microphones. A drum kit is a single acoustic system comprised of
+multiple distinct sound sources playing simultaneously. When a snare
+drum is struck, the acoustic wave reaches the close snare microphone
+first, but it also travels through the air to reach the overhead
+microphones, tom microphones, and room microphones milliseconds later.
+When these multiple audio tracks are summed together to a stereo or mono
+bus, the identical acoustic information arrives at slightly offset
+times. The waves superimpose: frequencies whose wavelengths align with
+the delay are boosted, while frequencies that arrive 180 degrees out of
+phase cancel out, producing a series of mathematically spaced notches
+across the frequency spectrum.</p>
+<h3 id="boundary-and-surface-reflections">Boundary and Surface
+Reflections</h3>
+<p>Comb filtering does not require multiple microphones to occur; a
+single microphone can exhibit severe phase cancellation due to boundary
+reflections within the tracking room. When a drum produces a transient,
+the microphone captures both the direct sound and reflected sound waves
+bouncing off nearby surfaces, such as hard floors, low ceilings,
+drywall, or glass studio dividers. Because the reflected wave travels a
+slightly longer path than the direct sound, it arrives at the capsule
+with a short delay (typically under 15 to 20 milliseconds). Summed at
+the capsule diaphragm, this delayed reflection creates permanent comb
+filtering within that single channel that cannot be corrected with a
+phase-invert switch during mixing.</p>
+<h3
+id="dual-microphone-techniques-on-single-instruments">Dual-Microphone
+Techniques on Single Instruments</h3>
+<p>Placing two microphones on a single sound source frequently
+introduces phase interference. Common drum production techniques include
+miking both the top and bottom of a snare drum, or using internal and
+external microphones on a bass drum. With a snare drum, the top head
+moves downward on impact, creating positive air pressure, while the
+bottom head simultaneously pushes outward into the bottom microphone,
+creating an inverted mechanical movement. Additionally, the physical
+distance between the top and bottom heads introduces an acoustic transit
+delay. Without proper acoustic alignment and polarity correction,
+combining these two capsules results in low-end cancellation and
+mid-frequency comb filtering.</p>
+<h3 id="cymbal-bleed-and-acoustic-scattering">Cymbal Bleed and Acoustic
+Scattering</h3>
+<p>Cymbals present a unique acoustic challenge because they generate
+dense, continuous high-frequency energy with short wavelengths. Because
+high frequencies have wavelengths measured in fractions of an inch, even
+minuscule shifts in microphone position or cymbal movement alter phase
+relationships. When cymbals bleed into directional close microphones
+placed on rack toms or the snare, the high-frequency content combines
+with the direct overhead signals. As the cymbals sway, the path lengths
+continuously change, producing a shifting, modulated comb filter often
+described as a "swishing" or "phaser-like" artifact.</p>
+<h3 id="proximity-to-shells-and-hardware">Proximity to Shells and
+Hardware</h3>
+<p>Acoustic reflections also happen on a micro-scale within the drum kit
+itself. Sound waves reflecting off neighboring drum shells, metal rims,
+cymbal stands, and hardware can bounce directly into close-proximity
+directional microphones. These short-distance reflections involve delays
+of less than one millisecond, which push the comb-filtering nulls into
+the higher mid-range and treble regions, stripping transient attack and
+natural air from the drum recording.</p></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/music-production'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/music-production/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/music-production/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

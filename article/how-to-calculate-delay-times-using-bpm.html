@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Calculate Delay Times Using BPM - music-production</title>
+    <meta name="description" content="In music production, synchronizing delay effects to the tempo of a track ensures that echoes enhance the rhythm rather than cluttering the arrangement. While modern digital audio workstations (DAWs) often feature an automatic tempo-sync button, understan">
+    <link rel="canonical" href="https://salivity.github.io/music-production/article/how-to-calculate-delay-times-using-bpm">
+    <link rel="icon" href="/music-production/favicon.ico">
+    <link rel="stylesheet" href="/music-production/css/style.css">
+    <link media="print" rel="stylesheet" href="/music-production/css/print.css">
+    <script src="/music-production/js/fuse.min.js"></script>
+    <script src="/music-production/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Calculate Delay Times Using BPM - music-production" />
+    <meta property="og:url" content="https://salivity.github.io/music-production/article/how-to-calculate-delay-times-using-bpm" />
+    <meta property="og:image:url" content="https://salivity.github.io/music-production/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/music-production/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="In music production, synchronizing delay effects to the tempo of a track ensures that echoes enhance the rhythm rather than cluttering the arrangement. While modern digital audio workstations (DAWs) often feature an automatic tempo-sync button, understan" />
+    <link rel="manifest" href="/music-production/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/music-production/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>music-production</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/music-production/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="how-to-calculate-delay-times-using-bpm">How to Calculate Delay
+Times Using BPM</h1>
+<p>In music production, synchronizing delay effects to the tempo of a
+track ensures that echoes enhance the rhythm rather than cluttering the
+arrangement. While modern digital audio workstations (DAWs) often
+feature an automatic tempo-sync button, understanding the mathematical
+relationship between beats per minute (BPM) and milliseconds (ms) allows
+producers to configure hardware delays, dial in precise reverb
+pre-delays, and create custom rhythmic feels. This guide explains the
+core formula for calculating delay times from BPM, how to compute
+standard, dotted, and triplet note values, and how to apply these
+numbers effectively in a mix.</p>
+<h3 id="the-fundamental-formula">The Fundamental Formula</h3>
+<p>Audio delay is measured in milliseconds. Because there are 60,000
+milliseconds in a single minute (60 seconds × 1,000 milliseconds), you
+can determine the duration of one beat (a quarter note) by dividing
+60,000 by the project's BPM:</p>
+<p><span class="math display">\[\text{Quarter Note (ms)} =
+\frac{60,000}{\text{BPM}}\]</span></p>
+<p>For example, at 120 BPM: <span class="math display">\[60,000 \div 120
+= 500\text{ ms}\]</span></p>
+<p>A standard quarter-note echo at 120 BPM will trigger every 500
+milliseconds.</p>
+<h3 id="calculating-standard-note-values">Calculating Standard Note
+Values</h3>
+<p>Once the quarter-note value is established, you can find other
+standard rhythmic subdivisions through basic multiplication and
+division:</p>
+<ul>
+<li><strong>Whole Note (1/1):</strong> Quarter Note × 4 (e.g., <span
+class="math inline">\(500 \times 4 = 2,000\text{ ms}\)</span>)</li>
+<li><strong>Half Note (1/2):</strong> Quarter Note × 2 (e.g., <span
+class="math inline">\(500 \times 2 = 1,000\text{ ms}\)</span>)</li>
+<li><strong>Quarter Note (1/4):</strong> <span
+class="math inline">\(60,000 \div \text{BPM}\)</span> (e.g., <span
+class="math inline">\(500\text{ ms}\)</span>)</li>
+<li><strong>Eighth Note (1/8):</strong> Quarter Note ÷ 2 (e.g., <span
+class="math inline">\(500 \div 2 = 250\text{ ms}\)</span>)</li>
+<li><strong>Sixteenth Note (1/16):</strong> Quarter Note ÷ 4 (e.g.,
+<span class="math inline">\(500 \div 4 = 125\text{ ms}\)</span>)</li>
+<li><strong>Thirty-Second Note (1/32):</strong> Quarter Note ÷ 8 (e.g.,
+<span class="math inline">\(500 \div 8 = 62.5\text{ ms}\)</span>)</li>
+</ul>
+<h3 id="calculating-dotted-and-triplet-values">Calculating Dotted and
+Triplet Values</h3>
+<p>Music rarely relies exclusively on straight subdivisions. Dotted
+notes and triplets introduce swing, syncopation, and rhythmic
+movement.</p>
+<h4 id="dotted-notes">Dotted Notes</h4>
+<p>A dotted note extends a standard note's duration by 50%. To find a
+dotted delay time, multiply the standard note value by 1.5:</p>
+<p><span class="math display">\[\text{Dotted Value} = \text{Standard
+Note Value} \times 1.5\]</span></p>
+<p>Using the 120 BPM example:</p>
+<ul>
+<li><strong>Dotted Quarter Note:</strong> <span
+class="math inline">\(500\text{ ms} \times 1.5 = 750\text{
+ms}\)</span></li>
+<li><strong>Dotted Eighth Note:</strong> <span
+class="math inline">\(250\text{ ms} \times 1.5 = 375\text{
+ms}\)</span></li>
+</ul>
+<p>The dotted eighth note is widely used in modern production to create
+an interlocking, syncopated bounce across a standard 4/4 rhythm.</p>
+<h4 id="triplet-notes">Triplet Notes</h4>
+<p>Triplets divide the space of two standard notes into three equal
+parts. To calculate a triplet value, multiply the standard note value by
+0.667 (or divide by 1.5):</p>
+<p><span class="math display">\[\text{Triplet Value} = \text{Standard
+Note Value} \times 0.667\]</span></p>
+<p>Using the 120 BPM example:</p>
+<ul>
+<li><strong>Quarter-Note Triplet:</strong> <span
+class="math inline">\(500\text{ ms} \times 0.667 \approx 333.3\text{
+ms}\)</span></li>
+<li><strong>Eighth-Note Triplet:</strong> <span
+class="math inline">\(250\text{ ms} \times 0.667 \approx 166.7\text{
+ms}\)</span></li>
+</ul>
+<h3 id="practical-applications-in-the-mix">Practical Applications in the
+Mix</h3>
+<ol type="1">
+<li><strong>Reverb Pre-Delay:</strong> Reverb pre-delay determines the
+gap between the dry sound and the onset of the reverb tail. Setting
+pre-delay to a 32nd-note or 64th-note value based on the BPM allows the
+original transient (such as a snare or lead vocal) to punch through
+cleanly before the reverberation starts, preserving clarity without
+disconnecting the ambience from the track's tempo.</li>
+<li><strong>Hardware Delay Integration:</strong> Vintage analog and
+early digital delays often lack MIDI sync or DAW integration.
+Calculating millisecond values allows you to manually set the delay time
+knob to achieve locked-in grooves.</li>
+<li><strong>Intentional Timing Offsets:</strong> Perfect synchronization
+can sometimes sound sterile. Producers often calculate the
+mathematically perfect delay time and then manually adjust it by 5 to 15
+milliseconds earlier or later. A slightly shorter time creates an
+urgent, rushing feel, while a slightly longer time introduces a relaxed,
+laid-back groove.</li>
+</ol></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/music-production'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/music-production/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/music-production/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

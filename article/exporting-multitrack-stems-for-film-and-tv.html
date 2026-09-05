@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exporting Multitrack Stems for Film and TV - music-production</title>
+    <meta name="description" content="Exporting multitrack stems for film and television requires strict adherence to industry-standard technical specifications to ensure seamless integration into the final re-recording mix. This guide outlines the essential technical requirements for delive">
+    <link rel="canonical" href="https://salivity.github.io/music-production/article/exporting-multitrack-stems-for-film-and-tv">
+    <link rel="icon" href="/music-production/favicon.ico">
+    <link rel="stylesheet" href="/music-production/css/style.css">
+    <link media="print" rel="stylesheet" href="/music-production/css/print.css">
+    <script src="/music-production/js/fuse.min.js"></script>
+    <script src="/music-production/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Exporting Multitrack Stems for Film and TV - music-production" />
+    <meta property="og:url" content="https://salivity.github.io/music-production/article/exporting-multitrack-stems-for-film-and-tv" />
+    <meta property="og:image:url" content="https://salivity.github.io/music-production/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/music-production/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Exporting multitrack stems for film and television requires strict adherence to industry-standard technical specifications to ensure seamless integration into the final re-recording mix. This guide outlines the essential technical requirements for delive" />
+    <link rel="manifest" href="/music-production/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/music-production/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>music-production</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/music-production/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="exporting-multitrack-stems-for-film-and-tv">Exporting Multitrack
+Stems for Film and TV</h1>
+<p>Exporting multitrack stems for film and television requires strict
+adherence to industry-standard technical specifications to ensure
+seamless integration into the final re-recording mix. This guide
+outlines the essential technical requirements for delivering music
+stems, including standard sample rates, bit depths, sync alignment,
+headroom, stem configurations, and file naming conventions.</p>
+<h3 id="audio-format-and-resolution">Audio Format and Resolution</h3>
+<p>The film and broadcast industries rely on standardized digital audio
+formats. Deviating from these settings can cause sample-rate conversion
+errors or pitch artifacts during the dub stage.</p>
+<ul>
+<li><strong>File Format:</strong> Broadcast Wave Format (BWF / .wav) is
+the universal industry standard. BWF files support embedded timecode
+metadata.</li>
+<li><strong>Sample Rate:</strong> 48 kHz is the mandatory standard for
+film and television. In some high-end film pipelines, 96 kHz may be
+requested, but you should never deliver 44.1 kHz.</li>
+<li><strong>Bit Depth:</strong> 24-bit fixed or 32-bit floating point.
+24-bit is the most widely compatible, while 32-bit float provides extra
+protection against digital clipping.</li>
+</ul>
+<h3 id="timecode-and-synchronization">Timecode and Synchronization</h3>
+<p>All stems must line up instantly without manual positioning by the
+re-recording mixer.</p>
+<ul>
+<li><strong>Common Start Point:</strong> Every exported stem must share
+the exact same start and end points on the timeline, starting from bar
+1, beat 1 (or the designated cue start point), even if a specific
+instrument does not play until midway through the cue.</li>
+<li><strong>Sync Pop (2-Pop):</strong> Include a standard 1-frame, 1 kHz
+visual/audio sync tone located exactly two seconds before the first
+frame of picture (typically at 00:59:58:00 for an hour-one start).</li>
+<li><strong>Frame Rate:</strong> Ensure your digital audio workstation
+(DAW) project matches the exact frame rate of the video cut (e.g.,
+23.976 fps, 24 fps, 25 fps, or 29.97 fps).</li>
+</ul>
+<h3 id="headroom-and-master-bus-processing">Headroom and Master Bus
+Processing</h3>
+<p>Music stems will be balanced against dialogue, sound effects, and
+Foley. Re-recording mixers require dynamic headroom to adjust music
+levels appropriately.</p>
+<ul>
+<li><strong>Remove Master Limiters:</strong> Turn off aggressive
+brickwall limiters, clippers, or heavy mastering compression on the
+master output before printing stems.</li>
+<li><strong>Maintain Headroom:</strong> Ensure stems peak between -3
+dBFS and -6 dBFS. No individual stem should hit 0 dBFS.</li>
+<li><strong>Sum to Mix:</strong> When all exported stems are brought
+into a blank session with faders set to unity (0 dB), the combined
+playback must sound identical to your approved full stereo mix.</li>
+</ul>
+<h3 id="stem-categorization-and-fx-delivery">Stem Categorization and FX
+Delivery</h3>
+<p>A stem is not an individual solo track (which is a multitrack or
+"part"); it is a stereo audio group representing a specific instrument
+family.</p>
+<p>Standard delivery typically requires the following stereo groups:</p>
+<ul>
+<li><strong>Strings</strong> (High Strings, Low Strings, or
+unified)</li>
+<li><strong>Brass</strong></li>
+<li><strong>Woodwinds</strong></li>
+<li><strong>Percussion / Drums</strong> (often split into
+Tuned/Orchestral and Modern/Acoustic Kit)</li>
+<li><strong>Bass</strong> (Synth Bass, Electric Bass, or Upright)</li>
+<li><strong>Guitars / Keys</strong></li>
+<li><strong>Synths / Sound Design</strong></li>
+<li><strong>Choir / Vocals</strong></li>
+</ul>
+<p><strong>Effects Routing:</strong> Reverb and time-based effects
+should generally be printed within their corresponding stems. If a
+reverb is shared across multiple instrument families (such as an
+orchestral hall reverb), print a dedicated "Shared FX" or "Reverb" stem
+to prevent the master balance from altering when individual sections are
+adjusted.</p>
+<h3 id="file-naming-and-delivery-package">File Naming and Delivery
+Package</h3>
+<p>Unambiguous file naming prevents critical mix-stage delays.</p>
+<p>Use a standardized naming convention:
+<code>[Cue Number]_[Cue Title]_[Stem Name]_[Version].wav</code></p>
+<p><em>Example:</em></p>
+<ul>
+<li><code>1M03_ChasingShadows_STRINGS_v02.wav</code></li>
+<li><code>1M03_ChasingShadows_PERC_v02.wav</code></li>
+<li><code>1M03_ChasingShadows_FULLMIX_v02.wav</code></li>
+</ul>
+<p>Always include a full stereo reference mix of the cue, an unmastered
+mix, and a tempo map or MIDI file if requested by the music editor.</p></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/music-production'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/music-production/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/music-production/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

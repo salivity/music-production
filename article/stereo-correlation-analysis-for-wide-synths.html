@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stereo Correlation Analysis for Wide Synths - music-production</title>
+    <meta name="description" content="Stereo correlation analysis is an essential diagnostic process that helps music producers evaluate phase relationships between left and right audio channels, ensuring that wide, expansive synthesizer patches retain their tonal weight and presence when su">
+    <link rel="canonical" href="https://salivity.github.io/music-production/article/stereo-correlation-analysis-for-wide-synths">
+    <link rel="icon" href="/music-production/favicon.ico">
+    <link rel="stylesheet" href="/music-production/css/style.css">
+    <link media="print" rel="stylesheet" href="/music-production/css/print.css">
+    <script src="/music-production/js/fuse.min.js"></script>
+    <script src="/music-production/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Stereo Correlation Analysis for Wide Synths - music-production" />
+    <meta property="og:url" content="https://salivity.github.io/music-production/article/stereo-correlation-analysis-for-wide-synths" />
+    <meta property="og:image:url" content="https://salivity.github.io/music-production/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/music-production/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Stereo correlation analysis is an essential diagnostic process that helps music producers evaluate phase relationships between left and right audio channels, ensuring that wide, expansive synthesizer patches retain their tonal weight and presence when su" />
+    <link rel="manifest" href="/music-production/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/music-production/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>music-production</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/music-production/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="stereo-correlation-analysis-for-wide-synths">Stereo Correlation
+Analysis for Wide Synths</h1>
+<p>Stereo correlation analysis is an essential diagnostic process that
+helps music producers evaluate phase relationships between left and
+right audio channels, ensuring that wide, expansive synthesizer patches
+retain their tonal weight and presence when summed to mono. Modern sound
+design techniques often generate massive stereo width through chorus,
+unison detuning, and micro-delays, but these methods frequently
+introduce phase discrepancies. By measuring phase coherence with a
+correlation meter, producers can pinpoint destructive interference,
+optimize stereo width, and guarantee their mixes sound powerful on
+everything from mono smartphone speakers and club sound systems to
+high-end stereo setups.</p>
+<h3 id="the-mechanism-of-phase-cancellation">The Mechanism of Phase
+Cancellation</h3>
+<p>Wide synthesizer sounds are commonly created using spatial effects
+such as the Haas effect, phase-inverting wideners, chorusing, and heavy
+stereo unison. These techniques work by introducing small timing delays,
+pitch variations, or phase inversions between the left and right
+channels.</p>
+<p>When a stereo signal is played through a single speaker, the left and
+right channels are summed into a single mono channel (<span
+class="math inline">\(L + R\)</span>). If the waveform peaks on the left
+channel align with the waveform troughs on the right channel,
+destructive phase cancellation occurs. In the context of a synth, this
+results in the sound becoming thin, hollow, losing low-end punch, or
+vanishing entirely from the mix.</p>
+<h3 id="decoding-the-stereo-correlation-meter">Decoding the Stereo
+Correlation Meter</h3>
+<p>A stereo correlation meter provides real-time visual feedback on the
+phase relationship of a signal, typically operating on a scale from -1
+to +1:</p>
+<ul>
+<li><strong>+1 (Perfect In-Phase):</strong> The left and right signals
+are identical. This represents a pure mono signal with zero phase risk,
+though with no stereo width.</li>
+<li><strong>0 to +1 (Safe Stereo Field):</strong> The channels share
+similarities but feature enough differences to create a broad stereo
+image. A reading between +0.4 and +0.8 is generally the sweet spot for
+wide synth leads and pads, offering noticeable width while maintaining
+mono integrity.</li>
+<li><strong>0 (Independent Channels):</strong> The left and right
+channels are completely uncorrelated. While width is maximum, half the
+energy may be lost when summed to mono.</li>
+<li><strong>-1 to 0 (Out-of-Phase / Anti-Phase):</strong> Significant
+portions of the left and right signals are inverted relative to each
+other. Values in this range mean frequencies will cancel out upon mono
+collapse, leading to immediate degradation of the sound.</li>
+</ul>
+<h3 id="diagnostic-strategies-for-wide-synths">Diagnostic Strategies for
+Wide Synths</h3>
+<p>To maintain both extreme width and mono compatibility, correlation
+analysis should be used at both the individual channel level and across
+frequency bands:</p>
+<ol type="1">
+<li><strong>Low-End Phase Isolation:</strong> Bass frequencies require
+high phase coherence. Using a multiband correlation meter helps verify
+that the sub and low-mid frequencies of a synth patch remain strictly
+close to +1, even if the high frequencies dip closer to 0.</li>
+<li><strong>A/B Mono Checking:</strong> While the correlation meter
+reveals phase problems quantitatively, toggling a mono summing plugin on
+the master bus validates the sonic impact in real time. If the synth
+loses fundamental presence when auditioned in mono, the meter will
+quickly show whether negative phase values are the culprit.</li>
+<li><strong>Pinpointing Culprit Effects:</strong> Widening effects on
+synths can be analyzed sequentially. By bypassing chorus, dimension
+expanders, or unison modes one by one while watching the correlation
+meter, producers can isolate the exact plugin or parameter pushing the
+signal into negative correlation.</li>
+</ol>
+<h3 id="correcting-negative-correlation">Correcting Negative
+Correlation</h3>
+<p>When analysis reveals phase cancellation, several straightforward
+corrective actions can restore mono translation without sacrificing
+perceived width:</p>
+<ul>
+<li><strong>Mid/Side Equalization:</strong> Placing an M/S equalizer on
+the synth track allows high-passing the "Side" channel up to 100–200 Hz.
+This forces all low-end energy into mono (where phase cancellation is
+most destructive) while preserving the stereo information in the upper
+frequencies.</li>
+<li><strong>Delay and Spread Modulation Adjustment:</strong> Reducing
+the depth of unison detune or shortening micro-delays can pull phase
+values out of the negative zone. Often, reducing spread by as little as
+10–15% dramatically improves mono survival while leaving the stereo
+perception virtually untouched.</li>
+<li><strong>Channel Realignment:</strong> If static widening plugins
+invert the phase of one channel, using a utility tool to invert the
+phase back or adjusting sample delay between channels can eliminate
+anti-phase energy.</li>
+</ul>
+<p>By regularly monitoring stereo correlation during the sound design
+and mixing phases, producers eliminate the guesswork from spatial
+imaging, ensuring synths sound wide, punchy, and consistent across any
+playback environment.</p></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/music-production'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/music-production/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/music-production/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

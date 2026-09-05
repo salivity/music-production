@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How Spectral De-Masking Plugins Carve Frequencies - music-production</title>
+    <meta name="description" content="Spectral de-masking plugins eliminate sonic clutter by dynamically identifying where two tracks conflict across the frequency spectrum and carving narrow cuts in real time. Unlike static equalizers or broadband sidechain compressors, these advanced proce">
+    <link rel="canonical" href="https://salivity.github.io/music-production/article/how-spectral-de-masking-plugins-carve-frequencies">
+    <link rel="icon" href="/music-production/favicon.ico">
+    <link rel="stylesheet" href="/music-production/css/style.css">
+    <link media="print" rel="stylesheet" href="/music-production/css/print.css">
+    <script src="/music-production/js/fuse.min.js"></script>
+    <script src="/music-production/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How Spectral De-Masking Plugins Carve Frequencies - music-production" />
+    <meta property="og:url" content="https://salivity.github.io/music-production/article/how-spectral-de-masking-plugins-carve-frequencies" />
+    <meta property="og:image:url" content="https://salivity.github.io/music-production/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/music-production/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Spectral de-masking plugins eliminate sonic clutter by dynamically identifying where two tracks conflict across the frequency spectrum and carving narrow cuts in real time. Unlike static equalizers or broadband sidechain compressors, these advanced proce" />
+    <link rel="manifest" href="/music-production/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/music-production/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>music-production</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/music-production/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="how-spectral-de-masking-plugins-carve-frequencies">How Spectral
+De-Masking Plugins Carve Frequencies</h1>
+<p>Spectral de-masking plugins eliminate sonic clutter by dynamically
+identifying where two tracks conflict across the frequency spectrum and
+carving narrow cuts in real time. Unlike static equalizers or broadband
+sidechain compressors, these advanced processors analyze the spectral
+content of a sidechain trigger track and continuously attenuate only the
+conflicting frequencies on the target track. This process preserves the
+clarity, headroom, and tonal integrity of both sounds without
+introducing audible pumping artifacts.</p>
+<h3 id="fast-fourier-transform-fft-analysis">Fast Fourier Transform
+(FFT) Analysis</h3>
+<p>At the core of spectral de-masking is the Fast Fourier Transform
+(FFT) algorithm. Standard audio operates in the time domain, measuring
+amplitude variations over time. Spectral plugins convert both the target
+audio and an incoming sidechain signal into the frequency domain.</p>
+<p>This mathematical conversion slices the incoming audio into dozens,
+hundreds, or even thousands of narrow frequency bins. By monitoring
+these individual bins simultaneously, the plugin gains a high-resolution
+view of the exact frequency content present in both signals from
+millisecond to millisecond.</p>
+<h3 id="real-time-conflict-detection">Real-Time Conflict Detection</h3>
+<p>Once both signals are split into discrete frequency bins, the plugin
+compares their instantaneous spectral footprints. Masking occurs when
+two sounds occupy the same frequency space at the same amplitude
+simultaneously, causing the human ear to obscure one behind the other
+(such as a kick drum and a sub-bass, or a lead vocal and an electric
+guitar).</p>
+<p>The de-masking algorithm scans for bins where both the sidechain and
+the primary tracks exceed an established energy threshold. When it
+detects significant energy overlap in specific frequency bands, it flags
+those exact regions as actively masked.</p>
+<h3 id="dynamic-micro-band-gain-reduction">Dynamic, Micro-Band Gain
+Reduction</h3>
+<p>Once conflicting bins are identified, the plugin applies dynamic
+attenuation exclusively to the target track within those precise
+frequency slots.</p>
+<p>Rather than lowering the volume of the entire track or applying a
+broad dynamic EQ curve, the spectral processor acts as an array of
+hundreds of micro-filters. It temporarily ducks only the overlapping
+frequencies on the masked track by the calculated amount necessary to
+let the dominant sidechain track emerge. The moment the sidechain
+element releases its energy—such as the transient of a snare drum fading
+out—the attenuated frequencies on the target track snap back to their
+original levels instantly.</p>
+<h3 id="psychoacoustic-weighting">Psychoacoustic Weighting</h3>
+<p>Modern spectral processors often incorporate psychoacoustic models,
+such as equal-loudness contours, into their detection algorithms. Human
+hearing is far more sensitive to masking in the midrange (roughly 1 kHz
+to 5 kHz) than in the extreme sub-bass or ultra-high air bands. Advanced
+de-masking tools account for these perceptual quirks, adjusting their
+sensitivity and reduction curves to prioritize corrections where the
+human ear is most likely to perceive clutter and dissonance.</p>
+<h3 id="the-advantage-over-traditional-sidechaining">The Advantage Over
+Traditional Sidechaining</h3>
+<p>Traditional sidechain dynamic EQ requires manual hunting for problem
+frequencies, but because instrument pitches and vocal formants change
+constantly, static cuts leave hollow gaps when the masking sound is
+absent. Conversely, broadband sidechain compression ducks the entire
+track, causing distracting volume pumping.</p>
+<p>Spectral de-masking bridges this gap by remaining completely
+reactive. By continuously tracking and carving only the colliding
+frequencies when and where they happen, it delivers surgical clarity,
+maintains maximum dynamic power, and leaves the unconflicted portions of
+the audio entirely untouched.</p></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/music-production'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/music-production/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/music-production/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

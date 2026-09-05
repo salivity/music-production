@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How Dynamic Sidechain Splitters Separate Kick and Bass - music-production</title>
+    <meta name="description" content="In electronic music production, low-end clarity relies on managing the clash between kick drums and basslines. Dynamic sidechain splitters solve this masking problem by dividing an incoming bass signal into distinct frequency bands and selectively attenu">
+    <link rel="canonical" href="https://salivity.github.io/music-production/article/how-dynamic-sidechain-splitters-separate-kick-and-bass">
+    <link rel="icon" href="/music-production/favicon.ico">
+    <link rel="stylesheet" href="/music-production/css/style.css">
+    <link media="print" rel="stylesheet" href="/music-production/css/print.css">
+    <script src="/music-production/js/fuse.min.js"></script>
+    <script src="/music-production/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How Dynamic Sidechain Splitters Separate Kick and Bass - music-production" />
+    <meta property="og:url" content="https://salivity.github.io/music-production/article/how-dynamic-sidechain-splitters-separate-kick-and-bass" />
+    <meta property="og:image:url" content="https://salivity.github.io/music-production/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/music-production/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="In electronic music production, low-end clarity relies on managing the clash between kick drums and basslines. Dynamic sidechain splitters solve this masking problem by dividing an incoming bass signal into distinct frequency bands and selectively attenu" />
+    <link rel="manifest" href="/music-production/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/music-production/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>music-production</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/music-production/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="how-dynamic-sidechain-splitters-separate-kick-and-bass">How
+Dynamic Sidechain Splitters Separate Kick and Bass</h1>
+<p>In electronic music production, low-end clarity relies on managing
+the clash between kick drums and basslines. Dynamic sidechain splitters
+solve this masking problem by dividing an incoming bass signal into
+distinct frequency bands and selectively attenuating only the
+frequencies that overlap with the kick drum. This article breaks down
+how frequency splitting works, the routing mechanisms behind dynamic
+ducking, and why this targeted approach preserves bass presence and
+groove far better than traditional broadband sidechain compression.</p>
+<h3 id="the-low-end-conflict">The Low-End Conflict</h3>
+<p>Both the kick drum and the bassline naturally compete for energy
+within the same sub-bass and low-frequency spectrum—typically between 30
+Hz and 150 Hz. When these signals play simultaneously without
+intervention, they cause phase cancellation, volume spikes, and acoustic
+muddiness. While traditional sidechain compression lowers the volume of
+the entire bass track whenever the kick triggers it, this broadband
+approach often produces an aggressive "pumping" artifact that strips
+away the tonal character, upper harmonics, and rhythm of the
+bassline.</p>
+<h3 id="what-is-a-dynamic-sidechain-splitter">What is a Dynamic
+Sidechain Splitter?</h3>
+<p>A dynamic sidechain splitter combines crossover filtering with
+dynamic, sidechain-triggered processing. Instead of treating the bass
+sound as a single, uniform audio file, the splitter uses crossover
+filters to separate the track into two or more independent frequency
+bands—typically a low band (sub-frequencies) and a high band (mids and
+highs).</p>
+<p>Once split, internal routing allows the processor to apply dynamic
+gain reduction strictly to the target frequency band while leaving the
+remaining bands untouched.</p>
+<h3 id="the-isolation-process-step-by-step">The Isolation Process
+Step-by-Step</h3>
+<ol type="1">
+<li><p><strong>Frequency Crossover Identification:</strong> The producer
+determines the crossover point, typically set right around the dominant
+fundamental frequency of the kick drum (often between 80 Hz and 120 Hz).
+Everything below this point represents the low band, while everything
+above it constitutes the high band.</p></li>
+<li><p><strong>Sidechain Key Input:</strong> The kick drum track is
+routed into the processor as an external sidechain trigger (the "key"
+input). The plugin listens to the kick’s transient rather than the bass
+track itself to determine when to act.</p></li>
+<li><p><strong>Targeted Sub-Ducking:</strong> When the kick hits, the
+dynamic processor reduces the volume of only the low band of the bass.
+Because sub-bass is largely non-directional and predominantly sine-wave
+oriented, quickly ducking the bass's lowest frequencies creates
+immediate acoustic headroom for the kick drum’s transient and
+body.</p></li>
+<li><p><strong>Preserving Harmonics:</strong> The mid- and
+high-frequency bands bypass the dynamic reduction. The click, grit,
+distortion, and melodic information of the bass continue playing at full
+volume. To the listener's ear, the bass never disappears, maintaining
+perceived continuity and energy.</p></li>
+<li><p><strong>Envelope Recovery:</strong> Once the kick transient
+finishes, the splitter’s release envelope rapidly restores the sub-bass
+of the bassline. Fast attack times ensure the kick's initial impact is
+unhindered, while precise release settings restore low-end sustain
+instantly without audible clicks.</p></li>
+</ol>
+<h3 id="benefits-in-modern-mixing">Benefits in Modern Mixing</h3>
+<p>By isolating only the conflicting frequencies, dynamic sidechain
+splitters provide maximum headroom on the master channel without
+sacrificing the audible presence of the bass. The low-end stays tight
+and punchy, the kick cuts through with maximum impact, and the mix
+avoids the unnatural loss of mid-range stereo width or melody associated
+with heavy-handed broadband ducking.</p></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/music-production'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/music-production/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/music-production/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

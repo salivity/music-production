@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Causes of Phase Cancellation in DI and Miked Amp Tracks - music-production</title>
+    <meta name="description" content="Combining a direct injection (DI) signal with a miked amplifier is a classic production technique to capture both pristine clarity and raw analog power, but it often introduces destructive phase cancellation that hollows out low frequencies and smears tr">
+    <link rel="canonical" href="https://salivity.github.io/music-production/article/causes-of-phase-cancellation-in-di-and-miked-amp-tracks">
+    <link rel="icon" href="/music-production/favicon.ico">
+    <link rel="stylesheet" href="/music-production/css/style.css">
+    <link media="print" rel="stylesheet" href="/music-production/css/print.css">
+    <script src="/music-production/js/fuse.min.js"></script>
+    <script src="/music-production/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Causes of Phase Cancellation in DI and Miked Amp Tracks - music-production" />
+    <meta property="og:url" content="https://salivity.github.io/music-production/article/causes-of-phase-cancellation-in-di-and-miked-amp-tracks" />
+    <meta property="og:image:url" content="https://salivity.github.io/music-production/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/music-production/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Combining a direct injection (DI) signal with a miked amplifier is a classic production technique to capture both pristine clarity and raw analog power, but it often introduces destructive phase cancellation that hollows out low frequencies and smears tr" />
+    <link rel="manifest" href="/music-production/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/music-production/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>music-production</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/music-production/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="causes-of-phase-cancellation-in-di-and-miked-amp-tracks">Causes
+of Phase Cancellation in DI and Miked Amp Tracks</h1>
+<p>Combining a direct injection (DI) signal with a miked amplifier is a
+classic production technique to capture both pristine clarity and raw
+analog power, but it often introduces destructive phase cancellation
+that hollows out low frequencies and smears transients. This acoustic
+phenomenon occurs when two identical or related audio waveforms arrive
+at the mixing point at slightly different times, causing certain
+frequencies to cancel each other out through comb filtering.
+Understanding the primary factors that cause this timing
+mismatch—ranging from physical sound propagation to circuit-induced
+latency—is essential for achieving a cohesive, punchy guitar or bass
+tone.</p>
+<h3 id="1-acoustic-propagation-delay-the-speed-of-sound">1. Acoustic
+Propagation Delay (The Speed of Sound)</h3>
+<p>The most significant contributor to phase cancellation is the
+physical distance between the amplifier speaker and the microphone
+diaphragm. While an electrical DI signal travels through a cable at a
+fraction of the speed of light (virtually instantaneous), the sound wave
+exiting a speaker cabinet travels through the air at the speed of
+sound—approximately 343 meters per second (roughly 1.1 feet per
+millisecond).</p>
+<p>Even if a microphone is positioned just 6 inches away from the
+speaker grille, the acoustic sound arrives at the microphone
+approximately 0.45 milliseconds after the DI signal enters the audio
+interface. When mixed together, this delay causes destructive
+interference at frequencies where the phase shifts by 180 degrees,
+typically hollowing out the critical low-end and midrange body of the
+instrument.</p>
+<h3 id="2-electronic-phase-shift-and-group-delay">2. Electronic Phase
+Shift and Group Delay</h3>
+<p>Phase relationships are not only dictated by pure time delays; they
+are also altered by the reactive components within the signal chain.
+Guitar amplifiers, analog stompboxes, output transformers, and cabinet
+speaker coils all introduce frequency-dependent phase shifts, often
+referred to as group delay.</p>
+<p>Inductors, capacitors, and tone stacks (EQ sections) inside an
+amplifier naturally rotate the phase of specific frequency bands as they
+process the sound. Consequently, while some frequencies of the miked
+signal may align with the DI, other frequencies within the same track
+will fall out of phase, creating an irregular comb-filter pattern across
+the audio spectrum.</p>
+<h3 id="3-absolute-polarity-inversion">3. Absolute Polarity
+Inversion</h3>
+<p>A complete 180-degree phase flip, known as inverted polarity, can
+easily occur due to wiring discrepancies or amplifier gain stages.</p>
+<p>Certain tube amplifier topologies invert the polarity of the
+electrical signal through an odd number of gain stages before delivering
+it to the speaker. Additionally, miswired XLR or 1/4-inch cables
+(swapping pin 2 and pin 3) or microphones with non-standard polarity
+will invert the waveform. When an inverted miked signal is blended with
+a non-inverted DI signal, the two signals actively subtract from one
+another, virtually eliminating the low end.</p>
+<h3 id="4-converter-and-latency-offsets-during-reamping">4. Converter
+and Latency Offsets During Reamping</h3>
+<p>When combining a previously tracked DI with a reamped live amplifier,
+analog-to-digital (A/D) and digital-to-analog (D/A) converters introduce
+small buffer latencies.</p>
+<p>Sending a pre-recorded DI track out through an interface output,
+through a reamp box into an amplifier, and recording it back in through
+a microphone creates a round-trip delay consisting of conversion times
+and driver buffers. If your digital audio workstation (DAW) does not
+accurately calculate and compensate for this delay down to the
+individual sample, the reamped signal will trail behind the original DI,
+producing noticeable phase smear.</p>
+<h3 id="5-speaker-cone-inertia-and-air-resistance">5. Speaker Cone
+Inertia and Air Resistance</h3>
+<p>The physical nature of dynamic loudspeakers also contributes to
+micro-delays. A speaker cone has mechanical mass, suspension compliance,
+and inertia; it cannot react to an electrical impulse as fast as an
+electrical wire transmits it. The tiny delay caused by the voice coil
+energizing, pushing the cone against air resistance, and generating an
+acoustic wave creates a subtle lag compared to the pure, immediate
+electrical transient captured directly from the guitar's pickups.</p></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/music-production'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/music-production/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/music-production/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

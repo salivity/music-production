@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How Monophonic Pitch to MIDI Plugins Work - music-production</title>
+    <meta name="description" content="Converting monophonic audio into MIDI is a foundational process in modern music production that allows producers to control virtual instruments using their voice or an acoustic instrument. This article explains the technical pipeline pitch-tracking plugi">
+    <link rel="canonical" href="https://salivity.github.io/music-production/article/how-monophonic-pitch-to-midi-plugins-work">
+    <link rel="icon" href="/music-production/favicon.ico">
+    <link rel="stylesheet" href="/music-production/css/style.css">
+    <link media="print" rel="stylesheet" href="/music-production/css/print.css">
+    <script src="/music-production/js/fuse.min.js"></script>
+    <script src="/music-production/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How Monophonic Pitch to MIDI Plugins Work - music-production" />
+    <meta property="og:url" content="https://salivity.github.io/music-production/article/how-monophonic-pitch-to-midi-plugins-work" />
+    <meta property="og:image:url" content="https://salivity.github.io/music-production/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/music-production/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Converting monophonic audio into MIDI is a foundational process in modern music production that allows producers to control virtual instruments using their voice or an acoustic instrument. This article explains the technical pipeline pitch-tracking plugi" />
+    <link rel="manifest" href="/music-production/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/music-production/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>music-production</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/music-production/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="how-monophonic-pitch-to-midi-plugins-work">How Monophonic Pitch
+to MIDI Plugins Work</h1>
+<p>Converting monophonic audio into MIDI is a foundational process in
+modern music production that allows producers to control virtual
+instruments using their voice or an acoustic instrument. This article
+explains the technical pipeline pitch-tracking plugins use to transform
+continuous audio waveforms into discrete digital performance data. By
+breaking down signal pre-processing, fundamental frequency estimation,
+amplitude tracking, and final MIDI message generation, you will gain a
+clear understanding of the digital signal processing (DSP) driving these
+tools.</p>
+<h3 id="1-signal-pre-processing">1. Signal Pre-Processing</h3>
+<p>Before a plugin can evaluate pitch, the incoming audio must be
+conditioned to remove acoustic artifacts that could confuse the
+detection algorithm. Monophonic pitch detection requires a clear,
+single-voice source.</p>
+<p>During pre-processing, the plugin applies:</p>
+<ul>
+<li><strong>High-Pass and Low-Pass Filtering:</strong> Removes sub-bass
+rumble, microphone handling noise, and high-frequency hiss that could
+skew frequency calculations.</li>
+<li><strong>Transient Detection:</strong> Identifies the precise attack
+of a sound to mark where a note begins, separating the initial strike
+from the sustained tone.</li>
+</ul>
+<h3 id="2-pitch-detection-algorithms">2. Pitch Detection Algorithms</h3>
+<p>The core task of the plugin is determining the fundamental frequency
+(<span class="math inline">\(f_0\)</span>) of the sound, which
+determines the perceived musical pitch. Because complex acoustic sounds
+contain multiple overtones and harmonics, the plugin relies on
+specialized algorithms to isolate the root pitch:</p>
+<ul>
+<li><strong>Autocorrelation (Time-Domain):</strong> This method compares
+the incoming waveform against time-delayed versions of itself. When the
+delayed signal closely matches the original signal, the time offset
+reveals the fundamental period of the waveform. The frequency is then
+calculated as the inverse of this period (<span class="math inline">\(f
+= 1 / T\)</span>).</li>
+<li><strong>Fast Fourier Transform / Spectral Analysis
+(Frequency-Domain):</strong> The plugin converts audio slices from the
+time domain into the frequency spectrum. It identifies the lowest strong
+harmonic peak or looks for common harmonic spacing to deduce the
+fundamental pitch.</li>
+<li><strong>The YIN Algorithm:</strong> A refined version of
+autocorrelation widely used in audio plugins. It minimizes errors caused
+by higher harmonics masquerading as the fundamental pitch (an issue
+known as octave jumping).</li>
+</ul>
+<h3 id="3-velocity-and-dynamics-mapping">3. Velocity and Dynamics
+Mapping</h3>
+<p>Pitch tracking plugins capture not only which note was played, but
+how hard it was played.</p>
+<p>To determine the MIDI velocity (a value ranging from 0 to 127), an
+envelope follower tracks the amplitude of the incoming signal. The peak
+amplitude or Root Mean Square (RMS) energy measured immediately after
+the note's transient attack is scaled and mapped directly to a
+corresponding MIDI velocity value.</p>
+<h3 id="4-note-segmentation-and-thresholds">4. Note Segmentation and
+Thresholds</h3>
+<p>To prevent erratic, unintentional MIDI notes, the plugin employs
+strict thresholds:</p>
+<ul>
+<li><strong>Gate / Amplitude Threshold:</strong> Sounds falling below a
+specified decibel level are ignored, preventing background noise from
+triggering notes.</li>
+<li><strong>Hysteresis:</strong> Plugins use dual-threshold systems to
+differentiate between intentional note releases and temporary amplitude
+dips.</li>
+<li><strong>Pitch Stability Checks:</strong> The algorithm requires the
+frequency to remain stable for a minimum number of milliseconds before
+generating a <strong>Note On</strong> message. When the signal drops
+below the threshold or changes frequency abruptly, a <strong>Note
+Off</strong> message is sent.</li>
+</ul>
+<h3 id="5-pitch-bend-and-continuous-expression">5. Pitch Bend and
+Continuous Expression</h3>
+<p>Monophonic sources like vocals, fretless basses, or brass instruments
+rarely stay on an exact, mathematically perfect pitch. To reflect
+real-world performance nuances:</p>
+<ul>
+<li>The plugin quantizes the fundamental frequency to the nearest
+standard MIDI note number (for example, 440 Hz maps to Note 69, or
+A4).</li>
+<li>Any microtonal deviations, vibrato, or slides are calculated as
+deviations from the center frequency.</li>
+<li>These micro-deviations are continuously output as high-resolution
+<strong>MIDI Pitch Bend</strong> messages, preserving the human
+inflection of the original performance.</li>
+</ul>
+<h3 id="latency-considerations">Latency Considerations</h3>
+<p>Real-time monophonic pitch tracking inherently introduces slight
+latency. A pitch detector must analyze at least one to two full cycles
+of a waveform to reliably identify its period. Consequently, lower
+frequencies (which have longer physical cycles) require slightly more
+processing time to detect than higher frequencies. Modern plugins
+balance buffer sizes and predictive algorithms to keep this delay
+imperceptible during recording and playback.</p></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/music-production'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/music-production/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/music-production/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How Limiters Prevent Inter-Sample Peak Distortion - music-production</title>
+    <meta name="description" content="Digital limiters prevent inter-sample peak distortion during mastering by using oversampling and reconstruction algorithms to detect and manage analog waveform peaks that standard sample-peak meters miss. While standard digital meters only evaluate indiv">
+    <link rel="canonical" href="https://salivity.github.io/music-production/article/how-limiters-prevent-inter-sample-peak-distortion">
+    <link rel="icon" href="/music-production/favicon.ico">
+    <link rel="stylesheet" href="/music-production/css/style.css">
+    <link media="print" rel="stylesheet" href="/music-production/css/print.css">
+    <script src="/music-production/js/fuse.min.js"></script>
+    <script src="/music-production/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How Limiters Prevent Inter-Sample Peak Distortion - music-production" />
+    <meta property="og:url" content="https://salivity.github.io/music-production/article/how-limiters-prevent-inter-sample-peak-distortion" />
+    <meta property="og:image:url" content="https://salivity.github.io/music-production/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/music-production/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Digital limiters prevent inter-sample peak distortion during mastering by using oversampling and reconstruction algorithms to detect and manage analog waveform peaks that standard sample-peak meters miss. While standard digital meters only evaluate indiv" />
+    <link rel="manifest" href="/music-production/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/music-production/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>music-production</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/music-production/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="how-limiters-prevent-inter-sample-peak-distortion">How Limiters
+Prevent Inter-Sample Peak Distortion</h1>
+<p>Digital limiters prevent inter-sample peak distortion during
+mastering by using oversampling and reconstruction algorithms to detect
+and manage analog waveform peaks that standard sample-peak meters miss.
+While standard digital meters only evaluate individual discrete samples,
+the continuous analog waveform reconstructed by a digital-to-analog
+converter (DAC) can rise above these sample points and exceed 0 dBFS,
+causing harsh clipping distortion. True Peak limiters solve this problem
+by upsampling the audio internally, identifying hidden peaks between
+samples, and applying gain reduction to keep the final reconstructed
+signal within safe analog playback limits.</p>
+<h3 id="understanding-inter-sample-peaks">Understanding Inter-Sample
+Peaks</h3>
+<p>Digital audio captures sound as discrete numerical snapshots taken at
+regular intervals, known as the sample rate. When audio is played back,
+a DAC smooths these discrete points back into a continuous analog
+voltage wave.</p>
+<p>A traditional digital limiter monitors only the numerical value of
+each individual sample. If two consecutive samples sit at or near 0
+dBFS, the continuous analog curve drawn between them often arcs
+significantly higher than the individual points. This hidden crest is an
+inter-sample peak (ISP). When an ISP exceeds the maximum ceiling of 0
+dBFS, it overloads the DAC's analog reconstruction filters, generating
+audible clipping, harmonic distortion, and loss of transient clarity.
+ISPs also degrade lossy encoding processes, such as MP3 or AAC
+conversion on streaming platforms, generating encoding artifacts.</p>
+<h3 id="internal-oversampling-and-reconstruction">Internal Oversampling
+and Reconstruction</h3>
+<p>To catch inter-sample peaks before audio leaves the digital
+workstation, modern mastering limiters implement internal oversampling,
+often adhering to the ITU-R BS.1770 standard for True Peak
+measurement.</p>
+<p>When audio enters a True Peak limiter, the processor temporarily
+multiplies the sample rate—typically by 4x, 8x, or 16x—using digital
+interpolation filters. By inserting intermediate calculated values
+between the original audio samples, the limiter reconstructs a
+high-resolution approximation of the continuous waveform. This process
+exposes the peaks that would otherwise only appear after
+digital-to-analog conversion.</p>
+<h3 id="dynamic-gain-reduction-and-lookahead-processing">Dynamic Gain
+Reduction and Lookahead Processing</h3>
+<p>Once oversampling reveals the true trajectory of the waveform, the
+limiter's gain control module acts upon these hidden peaks.</p>
+<p>True Peak limiters rely heavily on lookahead buffers. Because
+inter-sample peaks often occur on extremely fast transients (such as
+snare hits or bright synth attacks), the limiter delays the output
+signal by a few milliseconds. This lookahead window gives the detection
+circuit time to anticipate an incoming peak and smoothly apply gain
+reduction before the peak reaches the output stage.</p>
+<p>The limiter pulls down the signal according to user-defined attack
+and release curves. By attenuating the discrete samples prior to the
+peak, the resulting continuous waveform remains safely below the defined
+threshold, eliminating inter-sample overshoots. Once processing is
+complete, the audio is downsampled back to the project’s target sample
+rate, retaining the gain reduction needed to keep the reconstructed
+analog wave below clipping levels.</p>
+<h3 id="practical-application-in-mastering">Practical Application in
+Mastering</h3>
+<p>Handling inter-sample peaks effectively requires setting appropriate
+True Peak ceilings rather than relying solely on the limiter's internal
+processing. Even with oversampling, steep low-pass filtering during
+downsampling or subsequent lossy encoding can introduce minor
+post-limiter peaks.</p>
+<p>Mastering engineers typically configure the True Peak limiter ceiling
+between -0.5 dBTP and -1.0 dBTP. This provides sufficient headroom for
+lossy compression codecs and consumer-grade DAC reconstruction filters,
+ensuring that the mastered track translates cleanly across diverse
+playback systems without unexpected distortion.</p></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/music-production'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/music-production/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/music-production/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

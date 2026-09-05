@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How Digital EQs Generate Phase Shift Artifacts - music-production</title>
+    <meta name="description" content="Digital equalizers, particularly standard minimum-phase designs, inherently alter the timing and phase relationships of audio frequencies whenever gain adjustments are made. When boosting sharp frequency peaks using high Q factors, these phase shifts bec">
+    <link rel="canonical" href="https://salivity.github.io/music-production/article/how-digital-eqs-generate-phase-shift-artifacts">
+    <link rel="icon" href="/music-production/favicon.ico">
+    <link rel="stylesheet" href="/music-production/css/style.css">
+    <link media="print" rel="stylesheet" href="/music-production/css/print.css">
+    <script src="/music-production/js/fuse.min.js"></script>
+    <script src="/music-production/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How Digital EQs Generate Phase Shift Artifacts - music-production" />
+    <meta property="og:url" content="https://salivity.github.io/music-production/article/how-digital-eqs-generate-phase-shift-artifacts" />
+    <meta property="og:image:url" content="https://salivity.github.io/music-production/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/music-production/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Digital equalizers, particularly standard minimum-phase designs, inherently alter the timing and phase relationships of audio frequencies whenever gain adjustments are made. When boosting sharp frequency peaks using high Q factors, these phase shifts bec" />
+    <link rel="manifest" href="/music-production/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/music-production/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>music-production</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/music-production/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="how-digital-eqs-generate-phase-shift-artifacts">How Digital EQs
+Generate Phase Shift Artifacts</h1>
+<p>Digital equalizers, particularly standard minimum-phase designs,
+inherently alter the timing and phase relationships of audio frequencies
+whenever gain adjustments are made. When boosting sharp frequency peaks
+using high Q factors, these phase shifts become concentrated across
+narrow frequency bands, resulting in audible artifacts such as transient
+smearing, localized group delay, and comb filtering. This article breaks
+down the mathematical and physical relationship between amplitude and
+phase in digital equalizers, explaining why narrow boosts create phase
+anomalies and how they impact music production.</p>
+<h3 id="the-amplitude-phase-relationship-minimum-phase">The
+Amplitude-Phase Relationship (Minimum Phase)</h3>
+<p>Most digital equalizers use Infinite Impulse Response (IIR) filters
+designed to emulate analog circuitry. These are classified as
+minimum-phase filters. According to the mathematics of minimum-phase
+systems (governed by the Hilbert transform and Bode's gain-phase
+theorem), amplitude response and phase response are strictly
+codependent.</p>
+<p>You cannot alter the amplitude (magnitude) of a signal at a given
+frequency without simultaneously introducing a phase shift. When an
+equalizer applies a boost, it delays certain frequency components
+relative to others to reshape the waveform. This is not a software
+defect; it is a mathematical requirement for causal, real-time filtering
+where output cannot precede input.</p>
+<h3 id="why-sharp-frequency-peaks-amplify-phase-shift">Why Sharp
+Frequency Peaks Amplify Phase Shift</h3>
+<p>The magnitude of phase shift corresponds directly to the steepness of
+the filter's gain curve. A broad, gentle boost (low Q) spreads the phase
+rotation smoothly across several octaves, resulting in a gradual and
+largely transparent phase change.</p>
+<p>Conversely, a sharp boost (high Q) forces a dramatic amplitude change
+over an extremely narrow bandwidth. This requires an aggressive, abrupt
+change in phase angle within that specific zone. The rate of change of
+phase with respect to frequency is known as <strong>group
+delay</strong>:</p>
+<p><span class="math display">\[\text{Group Delay} =
+-\frac{d\theta}{d\omega}\]</span></p>
+<p>Because the slope of the phase response (<span
+class="math inline">\(d\theta/d\omega\)</span>) becomes exceptionally
+steep around a sharp peak, the group delay spikes dramatically. The
+boosted frequency components, along with frequencies immediately
+adjacent to them, are delayed in time significantly longer than the rest
+of the audio spectrum.</p>
+<h3 id="audible-artifacts-caused-by-high-q-phase-shifts">Audible
+Artifacts Caused by High-Q Phase Shifts</h3>
+<p>When group delay and localized phase rotation occur around a narrow
+peak, several distinct sonic issues arise:</p>
+<ul>
+<li><strong>Transient Smearing:</strong> Transients rely on the precise,
+simultaneous arrival of multiple frequencies to sound punchy and
+defined. When a high-Q boost delays a small cluster of frequencies,
+those components detach from the initial transient hit, softening
+attacks on drums, acoustic guitars, and vocals.</li>
+<li><strong>Time-Domain Ringing:</strong> A steep filter curve has a
+long impulse response. When you boost a sharp peak, the filter stores
+and slowly releases energy at that center frequency, creating audible
+ringing (decaying resonance) that extends long after the source sound
+has stopped.</li>
+<li><strong>Comb Filtering in Multi-Mic and Layered Contexts:</strong>
+If the equalized track is blended with related signals—such as a snare
+top mic blended with a snare bottom mic, parallel processing paths, or
+layered synth patches—the phase-shifted frequencies will partially
+cancel out or artificially exaggerate adjacent frequencies upon
+summing.</li>
+</ul>
+<h3 id="minimum-phase-vs-linear-phase-trade-offs">Minimum-Phase vs.
+Linear-Phase Trade-offs</h3>
+<p>To avoid phase shift artifacts, producers often turn to Linear-Phase
+(FIR) equalizers. Linear-phase EQs delay the entire audio signal equally
+across the spectrum, keeping all phase angles aligned and eliminating
+phase-induced smearing.</p>
+<p>However, linear-phase filters introduce their own artifacts when
+boosting sharp peaks: <strong>pre-ringing</strong>. Instead of the
+resonance occurring after the transient, the filter's impulse response
+rings backward in time, creating a bizarre "whoosh" or hollow sound
+immediately before transient impacts.</p>
+<p>For surgical corrections, sharp boosts in minimum-phase equalizers
+remain problematic primarily because of the extreme localized phase
+rotation and group delay they enforce on the material. In professional
+mixing, broad boosts (low Q) and narrow cuts (high Q) remain standard
+practice to keep phase distortion to a minimum.</p></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/music-production'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/music-production/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/music-production/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

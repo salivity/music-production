@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Dithering: 24-Bit to 16-Bit Conversion - music-production</title>
+    <meta name="description" content="Audio dithering is a mathematical process applied during digital audio mastering to prevent harsh digital distortion when reducing an audio file's bit depth from 24-bit to 16-bit. By introducing a precisely calculated, microscopic amount of randomized no">
+    <link rel="canonical" href="https://salivity.github.io/music-production/article/audio-dithering-24-bit-to-16-bit-conversion">
+    <link rel="icon" href="/music-production/favicon.ico">
+    <link rel="stylesheet" href="/music-production/css/style.css">
+    <link media="print" rel="stylesheet" href="/music-production/css/print.css">
+    <script src="/music-production/js/fuse.min.js"></script>
+    <script src="/music-production/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Audio Dithering: 24-Bit to 16-Bit Conversion - music-production" />
+    <meta property="og:url" content="https://salivity.github.io/music-production/article/audio-dithering-24-bit-to-16-bit-conversion" />
+    <meta property="og:image:url" content="https://salivity.github.io/music-production/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/music-production/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Audio dithering is a mathematical process applied during digital audio mastering to prevent harsh digital distortion when reducing an audio file's bit depth from 24-bit to 16-bit. By introducing a precisely calculated, microscopic amount of randomized no" />
+    <link rel="manifest" href="/music-production/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/music-production/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>music-production</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/music-production/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="audio-dithering-24-bit-to-16-bit-conversion">Audio Dithering:
+24-Bit to 16-Bit Conversion</h1>
+<p>Audio dithering is a mathematical process applied during digital
+audio mastering to prevent harsh digital distortion when reducing an
+audio file's bit depth from 24-bit to 16-bit. By introducing a precisely
+calculated, microscopic amount of randomized noise to the signal before
+downsampling, dithering masks quantization errors and preserves
+low-level audio details like reverb tails and decaying notes. This
+article explains the mechanics of bit-depth reduction, the problem of
+truncation distortion, and how dithering ensures clean, professional
+16-bit audio exports.</p>
+<h3 id="understanding-bit-depth-and-quantization">Understanding Bit
+Depth and Quantization</h3>
+<p>Bit depth dictates the dynamic range and amplitude resolution of
+digital audio. A 24-bit audio file possesses over 16.7 million discrete
+amplitude steps, offering approximately 144 dB of dynamic range. In
+contrast, standard 16-bit audio (the format used for standard CDs and
+some streaming deliverables) offers 65,536 amplitude steps, yielding
+roughly 96 dB of dynamic range.</p>
+<p>When you render a 24-bit project down to a 16-bit file, 8 bits of
+data per sample must be removed. The audio engine must decide what to do
+with the extra data values that fall between the fewer steps available
+in 16-bit audio.</p>
+<h3 id="the-problem-with-truncation">The Problem with Truncation</h3>
+<p>Without dithering, the digital audio workstation (DAW) drops the
+lowest 8 bits through a process called <strong>truncation</strong>.
+Truncation abruptly rounds or cuts off values to the nearest available
+16-bit value.</p>
+<p>Because this rounding error correlates directly with the musical
+waveform, it introduces <strong>quantization distortion</strong>. Unlike
+pleasant analog harmonic saturation, quantization distortion is
+unnatural, gritty, and discordant. It becomes most audible during
+low-volume passages, such as:</p>
+<ul>
+<li>The natural fade-out of acoustic instruments</li>
+<li>The quiet tails of reverbs and delays</li>
+<li>Soft intros, outros, and silent gaps between tracks</li>
+</ul>
+<p>At low amplitudes, truncation produces an audible, buzzy digital hash
+that ruins the clarity of the mix.</p>
+<h3 id="how-dithering-solves-the-problem">How Dithering Solves the
+Problem</h3>
+<p>Dithering prevents quantization distortion by introducing low-level,
+uncorrelated analog-like noise (typically Triangular Probability Density
+Function or TPDF noise) before the bit depth is reduced.</p>
+<p>Although adding noise seems counterintuitive, this random signal
+decorrelates the rounding error from the audio signal. Instead of
+turning the discarded data into harsh, signal-dependent distortion,
+dithering transforms the error into a constant, steady, and benign
+hiss—similar to the tape hiss of analog recordings.</p>
+<p>Crucially, dithering allows human ears to perceive audio details
+buried <em>below</em> the theoretical dynamic floor of the 16-bit format
+(extending perceptual dynamic range beyond 96 dB to around 115 dB to 120
+dB). Reverb tails fade out smoothly into the noise floor rather than
+cutting off abruptly or crackling.</p>
+<h3 id="noise-shaping">Noise Shaping</h3>
+<p>Modern dithering algorithms often include <strong>noise
+shaping</strong>. Noise shaping alters the frequency curve of the dither
+noise, pushing it out of the critical human hearing range (typically
+between 1 kHz and 5 kHz) and shifting it up toward higher, less audible
+frequencies (15 kHz to 20 kHz). This results in a perceptually quieter
+background noise floor while still eliminating quantization
+distortion.</p>
+<h3 id="best-practices-for-applying-dither">Best Practices for Applying
+Dither</h3>
+<p>To maintain audio fidelity, apply dithering according to these
+rules:</p>
+<ol type="1">
+<li><strong>Dither only when downsampling bit depth:</strong> If you are
+exporting a 24-bit mix to a 16-bit master, apply dither. If you are
+rendering from 24-bit to 24-bit or 32-bit float, dithering is
+unnecessary.</li>
+<li><strong>Apply dither as the very last step:</strong> The dither
+plugin must sit at the absolute end of the mastering chain, after all
+limiters, equalizers, and gain adjustments. Any processing applied after
+dither can alter the noise profile and reintroduce truncation
+artifacts.</li>
+<li><strong>Dither only once:</strong> Avoid dithering at multiple
+stages of production. Repeated dithering stacks noise floors on top of
+each other, unnecessarily raising background noise without improving
+resolution.</li>
+</ol></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/music-production'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/music-production/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/music-production/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

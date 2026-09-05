@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidechain Dynamic EQ vs Sidechain Compression - music-production</title>
+    <meta name="description" content="In modern music production, both sidechain compression and sidechain dynamic EQ are essential tools used to resolve frequency masking and create space between competing elements in a mix. While both processes rely on an external audio signal to trigger g">
+    <link rel="canonical" href="https://salivity.github.io/music-production/article/sidechain-dynamic-eq-vs-sidechain-compression">
+    <link rel="icon" href="/music-production/favicon.ico">
+    <link rel="stylesheet" href="/music-production/css/style.css">
+    <link media="print" rel="stylesheet" href="/music-production/css/print.css">
+    <script src="/music-production/js/fuse.min.js"></script>
+    <script src="/music-production/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Sidechain Dynamic EQ vs Sidechain Compression - music-production" />
+    <meta property="og:url" content="https://salivity.github.io/music-production/article/sidechain-dynamic-eq-vs-sidechain-compression" />
+    <meta property="og:image:url" content="https://salivity.github.io/music-production/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/music-production/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="In modern music production, both sidechain compression and sidechain dynamic EQ are essential tools used to resolve frequency masking and create space between competing elements in a mix. While both processes rely on an external audio signal to trigger g" />
+    <link rel="manifest" href="/music-production/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/music-production/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>music-production</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/music-production/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="sidechain-dynamic-eq-vs-sidechain-compression">Sidechain Dynamic
+EQ vs Sidechain Compression</h1>
+<p>In modern music production, both sidechain compression and sidechain
+dynamic EQ are essential tools used to resolve frequency masking and
+create space between competing elements in a mix. While both processes
+rely on an external audio signal to trigger gain reduction, sidechain
+compression applies attenuation across the entire frequency spectrum of
+the target track, whereas sidechain dynamic EQ applies attenuation only
+to a specifically defined frequency band. Understanding this fundamental
+distinction allows producers to choose between broad, rhythmic volume
+ducking and precise, transparent frequency carving.</p>
+<h3 id="how-standard-sidechain-compression-works">How Standard Sidechain
+Compression Works</h3>
+<p>Standard sidechain compression routes an external signal (the key
+input or trigger) into a compressor loaded on a different track. When
+the trigger signal exceeds a predetermined threshold, the compressor
+pulls down the overall volume of the target track.</p>
+<p>Because standard compression is broadband, it attenuates all
+frequencies uniformly. For example, when a kick drum triggers a standard
+sidechain compressor on a bass guitar, the high, mid, and low
+frequencies of the bass are all reduced simultaneously. This creates a
+distinct pumping sensation, making it both a corrective tool and a
+popular creative effect in electronic and pop genres.</p>
+<h3 id="how-sidechain-dynamic-eq-works">How Sidechain Dynamic EQ
+Works</h3>
+<p>Sidechain dynamic EQ combines the surgical capabilities of an
+equalizer with the threshold-dependent behavior of a compressor. Instead
+of acting on the entire track, it listens to the external trigger and
+attenuates only a targeted frequency range, defined by a filter shape
+and bandwidth (Q).</p>
+<p>Using the same kick-and-bass example, a sidechain dynamic EQ can be
+configured to dip only the specific fundamental frequency of the kick
+drum (such as 60 Hz) from the bass track. While the kick hits, the
+low-end mud is cleared, but the upper-bass harmonics remain completely
+untouched, ensuring the bassline remains audible and present in the
+mix.</p>
+<h3 id="key-differences">Key Differences</h3>
+<ul>
+<li><strong>Frequency Selectivity:</strong> Sidechain compression
+affects the entire audio signal of the target track. Sidechain dynamic
+EQ alters only the selected frequency band, leaving the rest of the
+frequency spectrum untouched.</li>
+<li><strong>Transparency:</strong> Dynamic EQ is vastly more
+transparent. Because it only suppresses conflicting frequencies for the
+duration of the trigger, the listener rarely perceives a drop in the
+overall track volume. Standard sidechain compression is more audible and
+introduces volume movement.</li>
+<li><strong>Control and Parameters:</strong> Dynamic EQ offers
+EQ-specific controls like frequency selection, Q-factor, and filter
+slope alongside traditional dynamics controls (threshold, attack,
+release, and range). Sidechain compression typically limits control to
+threshold, ratio, attack, release, and occasionally a broad internal
+detection filter.</li>
+</ul>
+<h3 id="when-to-use-each-technique">When to Use Each Technique</h3>
+<p><strong>Choose Sidechain Compression When:</strong></p>
+<ul>
+<li>You want an audible, rhythmic "pumping" effect to drive the groove
+of a track.</li>
+<li>You need to push an entire instrument track (like an acoustic guitar
+or synth pad) behind a vocal without altering the instrument's tonal
+balance.</li>
+<li>Broad, simple gain reduction is sufficient to clean up an
+arrangement.</li>
+</ul>
+<p><strong>Choose Sidechain Dynamic EQ When:</strong></p>
+<ul>
+<li>Two instruments share a specific frequency clash (such as the low
+end of a kick and sub-bass, or the snap of a snare and the body of a
+guitar).</li>
+<li>You want to carve out vocal presence (around 1 kHz to 4 kHz) from
+dense electric guitars or synths without losing their weight and
+impact.</li>
+<li>Natural, unnoticeable separation is required in acoustic, jazz,
+rock, or orchestral mixes.</li>
+</ul></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/music-production'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/music-production/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/music-production/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>44.1 kHz vs 96 kHz in Music Production - music-production</title>
+    <meta name="description" content="This article examines the core differences between 44.1 kHz and 96 kHz sample rates in music production, comparing how both formats handle frequency capture, digital conversion, system performance, and audio processing. While 44.1 kHz remains the long-st">
+    <link rel="canonical" href="https://salivity.github.io/music-production/article/44-1-khz-vs-96-khz-in-music-production">
+    <link rel="icon" href="/music-production/favicon.ico">
+    <link rel="stylesheet" href="/music-production/css/style.css">
+    <link media="print" rel="stylesheet" href="/music-production/css/print.css">
+    <script src="/music-production/js/fuse.min.js"></script>
+    <script src="/music-production/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="44.1 kHz vs 96 kHz in Music Production - music-production" />
+    <meta property="og:url" content="https://salivity.github.io/music-production/article/44-1-khz-vs-96-khz-in-music-production" />
+    <meta property="og:image:url" content="https://salivity.github.io/music-production/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/music-production/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="This article examines the core differences between 44.1 kHz and 96 kHz sample rates in music production, comparing how both formats handle frequency capture, digital conversion, system performance, and audio processing. While 44.1 kHz remains the long-st" />
+    <link rel="manifest" href="/music-production/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/music-production/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>music-production</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/music-production/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="441-khz-vs-96-khz-in-music-production">44.1 kHz vs 96 kHz in
+Music Production</h1>
+<p>This article examines the core differences between 44.1 kHz and 96
+kHz sample rates in music production, comparing how both formats handle
+frequency capture, digital conversion, system performance, and audio
+processing. While 44.1 kHz remains the long-standing consumer standard,
+96 kHz provides specific technical advantages during the recording and
+mixing phases at the expense of storage space and computing power.</p>
+<h3 id="understanding-sample-rate-and-the-nyquist-limit">Understanding
+Sample Rate and the Nyquist Limit</h3>
+<p>A sample rate measures how many times per second an analog audio
+signal is measured and converted into digital data. Under the
+Nyquist-Shannon sampling theorem, a digital system can accurately
+capture and reproduce frequencies up to half of the chosen sample rate,
+a threshold known as the Nyquist frequency.</p>
+<ul>
+<li><strong>44.1 kHz:</strong> Possesses a Nyquist frequency of 22.05
+kHz. Because the typical human hearing range spans from 20 Hz to 20 kHz,
+44.1 kHz covers the entire audible spectrum.</li>
+<li><strong>96 kHz:</strong> Possesses a Nyquist frequency of 48 kHz.
+This captures frequencies well beyond the human range of hearing,
+extending deep into ultrasonic territory.</li>
+</ul>
+<h3 id="anti-aliasing-filters-and-phase-response">Anti-Aliasing Filters
+and Phase Response</h3>
+<p>To prevent frequencies higher than the Nyquist limit from reflecting
+back into the audible spectrum as distortion (known as aliasing),
+analog-to-digital converters use low-pass anti-aliasing filters.</p>
+<ul>
+<li><strong>At 44.1 kHz:</strong> The filter must sharply cut off all
+content between 20 kHz (the upper limit of human hearing) and 22.05 kHz.
+Designing filters with such a steep cutoff can introduce subtle phase
+distortion, pre-ringing, or frequency attenuation near the top of the
+audible range, although modern high-end converters handle this
+significantly better than older hardware.</li>
+<li><strong>At 96 kHz:</strong> The filter slope can be much gentler
+because the cutoff occurs between 20 kHz and 48 kHz. This wide margin
+pushes any filter artifacts far outside the audible spectrum, resulting
+in a theoretically cleaner phase response across audible
+frequencies.</li>
+</ul>
+<h3 id="plugin-processing-and-in-the-box-aliasing">Plugin Processing and
+In-the-Box Aliasing</h3>
+<p>Non-linear audio processing plugins—such as saturators, distortions,
+compressors, and limiters—generate harmonics that can easily exceed 20
+kHz.</p>
+<ul>
+<li><strong>At 44.1 kHz:</strong> Harmonics that exceed 22.05 kHz bounce
+back down into the audible spectrum as inharmonic distortion unless the
+plugin features internal oversampling.</li>
+<li><strong>At 96 kHz:</strong> The plugin processes audio with enough
+headroom to accommodate generated harmonics up to 48 kHz. This
+significantly reduces inharmonic aliasing distortion across complex
+mixes, often resulting in smoother high frequencies without requiring
+plugins to run separate oversampling algorithms.</li>
+</ul>
+<h3 id="hardware-latency">Hardware Latency</h3>
+<p>Operating at a higher sample rate decreases monitoring latency for
+recording artists. Audio buffers are measured in samples, not
+milliseconds:</p>
+<ul>
+<li>A 64-sample buffer at 44.1 kHz results in roughly <strong>1.45
+ms</strong> of converter latency.</li>
+<li>A 64-sample buffer at 96 kHz results in roughly <strong>0.67
+ms</strong> of converter latency.</li>
+</ul>
+<p>This reduction allows performers to monitor their input signals with
+imperceptible delay when tracking through software effects.</p>
+<h3 id="file-sizes-and-processing-demands">File Sizes and Processing
+Demands</h3>
+<p>The technical advantages of 96 kHz come with operational
+tradeoffs:</p>
+<ul>
+<li><strong>Storage:</strong> Audio recorded at 96 kHz contains more
+than double the data points of 44.1 kHz audio, meaning individual audio
+files and project folders are more than twice as large.</li>
+<li><strong>CPU Load:</strong> Digital audio workstations (DAWs) and
+computer processors must perform more than double the mathematical
+calculations per second at 96 kHz, resulting in higher CPU consumption,
+faster fan speeds, and lower track or plugin counts before system
+overload occurs.</li>
+</ul>
+<h3 id="practical-application">Practical Application</h3>
+<ul>
+<li><strong>44.1 kHz</strong> is the optimal choice for sessions with
+high track counts, systems with limited processing power, or projects
+intended strictly for standard streaming platforms and CD releases where
+data efficiency is prioritized.</li>
+<li><strong>96 kHz</strong> is well-suited for high-end tracking
+environments, audiophile releases, and sound design. In sound design
+particularly, recording at 96 kHz preserves high-frequency ultrasonic
+information that remains clear and detailed even when an audio file is
+dramatically pitch-shifted downward.</li>
+</ul></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/music-production'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/music-production/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/music-production/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

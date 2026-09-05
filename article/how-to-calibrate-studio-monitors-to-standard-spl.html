@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Calibrate Studio Monitors to Standard SPL - music-production</title>
+    <meta name="description" content="Calibrating reference monitors to standard Sound Pressure Levels (SPL) establishes a consistent acoustic baseline, ensuring that mixing and mastering decisions translate accurately across various playback systems. This guide outlines the essential steps">
+    <link rel="canonical" href="https://salivity.github.io/music-production/article/how-to-calibrate-studio-monitors-to-standard-spl">
+    <link rel="icon" href="/music-production/favicon.ico">
+    <link rel="stylesheet" href="/music-production/css/style.css">
+    <link media="print" rel="stylesheet" href="/music-production/css/print.css">
+    <script src="/music-production/js/fuse.min.js"></script>
+    <script src="/music-production/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Calibrate Studio Monitors to Standard SPL - music-production" />
+    <meta property="og:url" content="https://salivity.github.io/music-production/article/how-to-calibrate-studio-monitors-to-standard-spl" />
+    <meta property="og:image:url" content="https://salivity.github.io/music-production/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/music-production/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Calibrating reference monitors to standard Sound Pressure Levels (SPL) establishes a consistent acoustic baseline, ensuring that mixing and mastering decisions translate accurately across various playback systems. This guide outlines the essential steps" />
+    <link rel="manifest" href="/music-production/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/music-production/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>music-production</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/music-production/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="how-to-calibrate-studio-monitors-to-standard-spl">How to
+Calibrate Studio Monitors to Standard SPL</h1>
+<p>Calibrating reference monitors to standard Sound Pressure Levels
+(SPL) establishes a consistent acoustic baseline, ensuring that mixing
+and mastering decisions translate accurately across various playback
+systems. This guide outlines the essential steps required to calibrate
+your studio monitors, covering the necessary measurement tools, target
+reference levels for different room sizes, and the sequential process of
+aligning individual speaker outputs to standard industry
+specifications.</p>
+<h3 id="essential-equipment">Essential Equipment</h3>
+<p>To properly calibrate your monitoring chain, gather the following
+tools:</p>
+<ul>
+<li><strong>SPL Meter:</strong> A dedicated physical SPL meter or a
+calibrated measurement microphone with software (set to C-weighting and
+Slow response).</li>
+<li><strong>Pink Noise Source:</strong> A standard reference-level pink
+noise file or signal generator set to -20 dBFS RMS (full bandwidth, 20
+Hz to 20 kHz).</li>
+<li><strong>Monitor Controller or Audio Interface:</strong> Hardware
+with a stepped or clearly markable volume attenuator.</li>
+</ul>
+<h3 id="determine-your-target-spl">Determine Your Target SPL</h3>
+<p>Standard reference listening levels vary based on room volume to
+prevent acoustic distortion and ear fatigue:</p>
+<ul>
+<li><strong>Large Control Rooms (&gt; 1,500 sq. ft.):</strong> 83 to 85
+dB SPL (C-Weighted/Slow).</li>
+<li><strong>Medium Control Rooms (500–1,500 sq. ft.):</strong> 79 to 82
+dB SPL (C-Weighted/Slow).</li>
+<li><strong>Small/Home Studios (&lt; 500 sq. ft.):</strong> 73 to 76 dB
+SPL (C-Weighted/Slow).</li>
+</ul>
+<p>Setting the target level around 76–79 dB SPL in smaller untreated or
+partially treated spaces prevents room modes and early reflections from
+overwhelming the direct sound from the monitors.</p>
+<h3 id="step-1-position-the-spl-meter">Step 1: Position the SPL
+Meter</h3>
+<p>Place your SPL meter on a stand at the primary listening position
+(the sweet spot). The microphone capsule must be situated at ear height,
+angled at 45 degrees upward or pointing directly between the left and
+right monitors depending on your meter's microphone type
+(omnidirectional vs. free-field). Set the meter settings to
+<strong>C-Weighting</strong> and <strong>Slow</strong> response.</p>
+<h3 id="step-2-establish-interface-unity-gain">Step 2: Establish
+Interface Unity Gain</h3>
+<p>Turn the physical input gains on the back of your studio monitors to
+their lowest or nominal setting. Set your master monitor controller or
+audio interface output knob to a fixed reference position—often 12
+o'clock, unity (0 dB), or maximum position if using a passive
+controller. Mark this position clearly, as this will become your
+calibrated reference point.</p>
+<h3 id="step-3-play-pink-noise-through-the-left-channel">Step 3: Play
+Pink Noise Through the Left Channel</h3>
+<p>Generate -20 dBFS RMS pink noise inside your Digital Audio
+Workstation (DAW) and route it solely to the left monitor, keeping the
+right monitor muted. Ensure no digital master faders or processing
+plugins alter the output gain.</p>
+<h3 id="step-4-adjust-the-left-monitor-gain">Step 4: Adjust the Left
+Monitor Gain</h3>
+<p>Slowly increase the physical gain control on the back of the left
+studio monitor until the SPL meter consistently reads your target level
+(e.g., 76 dB SPL). The "Slow" meter setting averages fluctuations,
+providing a stable, readable figure. Once reached, lock or note the
+position of the left monitor's gain knob.</p>
+<h3 id="step-5-calibrate-the-right-channel">Step 5: Calibrate the Right
+Channel</h3>
+<p>Mute the left channel and route the -20 dBFS RMS pink noise to the
+right monitor. Adjust only the right monitor's physical gain control
+until it matches the exact target SPL reading obtained for the left
+monitor. Both speakers are now matched for identical output
+efficiency.</p>
+<h3 id="step-6-verify-combined-output-and-mark-settings">Step 6: Verify
+Combined Output and Mark Settings</h3>
+<p>Unmute both speakers and play the pink noise through both monitors
+simultaneously. The combined acoustic output should register roughly 3
+to 6 dB higher than the individual target level (e.g., approximately 82
+dB SPL if your target was 76 dB SPL). Mark your monitor controller's
+master knob setting. This mark represents your standard calibrated
+listening level for evaluating dynamic range, frequency balance, and
+spatial placement.</p></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/music-production'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/music-production/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/music-production/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

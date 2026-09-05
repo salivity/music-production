@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Ground Audio Equipment and Stop Mains Hum - music-production</title>
+    <meta name="description" content="Mains hum—a low-frequency 50 Hz or 60 Hz buzz—is one of the most common issues plaguing music production studios. This noise typically stems from ground loops, where multiple pieces of gear share varying paths to electrical ground, creating a closed">
+    <link rel="canonical" href="https://salivity.github.io/music-production/article/how-to-ground-audio-equipment-and-stop-mains-hum">
+    <link rel="icon" href="/music-production/favicon.ico">
+    <link rel="stylesheet" href="/music-production/css/style.css">
+    <link media="print" rel="stylesheet" href="/music-production/css/print.css">
+    <script src="/music-production/js/fuse.min.js"></script>
+    <script src="/music-production/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How to Ground Audio Equipment and Stop Mains Hum - music-production" />
+    <meta property="og:url" content="https://salivity.github.io/music-production/article/how-to-ground-audio-equipment-and-stop-mains-hum" />
+    <meta property="og:image:url" content="https://salivity.github.io/music-production/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/music-production/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Mains hum—a low-frequency 50 Hz or 60 Hz buzz—is one of the most common issues plaguing music production studios. This noise typically stems from ground loops, where multiple pieces of gear share varying paths to electrical ground, creating a closed" />
+    <link rel="manifest" href="/music-production/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/music-production/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>music-production</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/music-production/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="how-to-ground-audio-equipment-and-stop-mains-hum">How to Ground
+Audio Equipment and Stop Mains Hum</h1>
+<p>Mains hum—a low-frequency 50 Hz or 60 Hz buzz—is one of the most
+common issues plaguing music production studios. This noise typically
+stems from ground loops, where multiple pieces of gear share varying
+paths to electrical ground, creating a closed loop that picks up
+electromagnetic interference. This guide outlines the essential steps to
+properly ground your studio equipment, eliminate ground loops, and
+isolate your signal paths to ensure clean, hum-free recordings.</p>
+<h3 id="1-implement-star-grounding-single-point-grounding">1. Implement
+Star Grounding (Single-Point Grounding)</h3>
+<p>A ground loop occurs when your connected equipment has more than one
+path to electrical earth, creating small voltage differences between
+device chassis. The most effective way to prevent this is star
+grounding:</p>
+<ul>
+<li><strong>Plug all studio gear into a single outlet:</strong> Connect
+your computer, monitors, audio interface, and outboard gear into a
+central, high-quality power distributor or surge protector.</li>
+<li><strong>Avoid multi-wall-outlet setups:</strong> Plugging different
+parts of your interconnected signal chain into different wall outlets
+can introduce different ground potentials, instantly creating a
+hum.</li>
+<li><strong>Use a dedicated power conditioner:</strong> A professional
+power conditioner cleans mains noise and provides unified ground
+distribution for rack gear.</li>
+</ul>
+<h3 id="2-never-cut-or-lift-the-safety-earth-on-mains-cables">2. Never
+Cut or Lift the Safety Earth on Mains Cables</h3>
+<p>A common, dangerous misconception is using three-to-two-prong
+"cheater plugs" or snapping off the ground pin on mains cables to stop
+hum. The electrical safety ground prevents your equipment's metal
+chassis from becoming electrically live in the event of an internal
+short. Defeating this ground is a major fire and electrocution hazard.
+Always solve grounding issues through audio signal paths, never through
+electrical mains cords.</p>
+<h3 id="3-convert-to-balanced-cables-xlr-and-trs">3. Convert to Balanced
+Cables (XLR and TRS)</h3>
+<p>Unbalanced cables (TS instrument cables and RCA) use the cable shield
+as the audio return path, leaving them vulnerable to ground loop
+noise.</p>
+<ul>
+<li>Replace unbalanced interconnects with <strong>balanced XLR or 1/4"
+TRS cables</strong> wherever your gear supports it.</li>
+<li>Balanced connections use two signal conductors (hot and cold) along
+with a separate ground shield. The receiving device uses common-mode
+rejection to cancel out noise picked up along the cable run,
+significantly reducing mains hum.</li>
+</ul>
+<h3 id="4-deploy-di-boxes-and-audio-isolation-transformers">4. Deploy DI
+Boxes and Audio Isolation Transformers</h3>
+<p>When connecting unbalanced gear—such as synthesizers, guitar
+pedalboards, or laptops—to your balanced interface, use passive Direct
+Injection (DI) boxes or 1:1 line isolation transformers:</p>
+<ul>
+<li><strong>Engage the Ground Lift switch:</strong> High-quality DI
+boxes feature a ground lift switch that disconnects pin 1 (the shield)
+on the balanced output, safely breaking the audio ground loop without
+compromising mains safety.</li>
+<li><strong>Use USB isolators:</strong> Computers frequently introduce
+digital noise and mains hum down USB cables into audio interfaces. An
+inline USB ground isolator can break the loop between the PC and
+interface.</li>
+</ul>
+<h3 id="5-physically-separate-audio-and-power-runs">5. Physically
+Separate Audio and Power Runs</h3>
+<p>Mains hum is not always conductive; it can also be inductively
+coupled into your audio cables through electromagnetic radiation emitted
+by power lines.</p>
+<ul>
+<li><strong>Keep distance:</strong> Run audio cables at least a few
+inches away from AC mains power cables and power supplies (wall
+warts).</li>
+<li><strong>Cross at right angles:</strong> When power and audio cables
+must intersect, ensure they cross at a 90-degree angle rather than
+running parallel to minimize magnetic field coupling.</li>
+</ul></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/music-production'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/music-production/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/music-production/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>

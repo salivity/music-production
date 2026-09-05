@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4Y4YXFHZS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-R4Y4YXFHZS');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How Do Auto-Tune and Melodyne Work on Vocals? - music-production</title>
+    <meta name="description" content="Pitch correction software analyzes an incoming vocal waveform, determines its fundamental frequency, and shifts that frequency to align with a specified musical scale or target pitch. While tools like Antares Auto-Tune prioritize real-time tracking and s">
+    <link rel="canonical" href="https://salivity.github.io/music-production/article/how-do-auto-tune-and-melodyne-work-on-vocals">
+    <link rel="icon" href="/music-production/favicon.ico">
+    <link rel="stylesheet" href="/music-production/css/style.css">
+    <link media="print" rel="stylesheet" href="/music-production/css/print.css">
+    <script src="/music-production/js/fuse.min.js"></script>
+    <script src="/music-production/js/script.js"></script>
+    <script id="MathJax-script" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.1.3/tex-chtml.min.js" defer></script>
+    <script src="/monetize/monetize.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How Do Auto-Tune and Melodyne Work on Vocals? - music-production" />
+    <meta property="og:url" content="https://salivity.github.io/music-production/article/how-do-auto-tune-and-melodyne-work-on-vocals" />
+    <meta property="og:image:url" content="https://salivity.github.io/music-production/images/open-graph/default.webp" />
+    <meta property="og:image:secure_url" content="https://salivity.github.io/music-production/images/open-graph/default.webp" />
+    <meta property="og:image:width" content="1120" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Pitch correction software analyzes an incoming vocal waveform, determines its fundamental frequency, and shifts that frequency to align with a specified musical scale or target pitch. While tools like Antares Auto-Tune prioritize real-time tracking and s" />
+    <link rel="manifest" href="/music-production/pwa/manifest.json" />
+</head>
+<body>
+    <header>
+        <a href="/music-production/" aria-label="Go To Home Page" title="Go To Home Page" id="logo">
+            <span>salivity.github.io/</span><span>music-production</span>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li><a href="https://github.com/salivity" title="Github" aria-label="Go To Github Profile Page"><svg class="svg-icon" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 1.27a11 11 0 00-3.48 21.46c.55.09.73-.28.73-.55v-1.84c-3.03.64-3.67-1.46-3.67-1.46-.55-1.29-1.28-1.65-1.28-1.65-.92-.65.1-.65.1-.65 1.1 0 1.73 1.1 1.73 1.1.92 1.65 2.57 1.2 3.21.92a2 2 0 01.64-1.47c-2.47-.27-5.04-1.19-5.04-5.5 0-1.1.46-2.1 1.2-2.84a3.76 3.76 0 010-2.93s.91-.28 3.11 1.1c1.8-.49 3.7-.49 5.5 0 2.1-1.38 3.02-1.1 3.02-1.1a3.76 3.76 0 010 2.93c.83.74 1.2 1.74 1.2 2.94 0 4.21-2.57 5.13-5.04 5.4.45.37.82.92.82 2.02v3.03c0 .27.1.64.73.55A11 11 0 0012 1.27"></path></svg></a></li>
+                <li><a href="/music-production/search" title="Search" aria-label="Go To Search Page"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"></path></svg></a></li>
+                <li><a id="theme-toggle" title="Theme" href="javascript:void(0);" aria-label="Toggle Website Theme"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article><h1 id="how-do-auto-tune-and-melodyne-work-on-vocals">How Do Auto-Tune
+and Melodyne Work on Vocals?</h1>
+<p>Pitch correction software analyzes an incoming vocal waveform,
+determines its fundamental frequency, and shifts that frequency to align
+with a specified musical scale or target pitch. While tools like Antares
+Auto-Tune prioritize real-time tracking and scale quantization,
+solutions like Celemony Melodyne utilize detailed graphical note
+separation and polyphonic analysis. Both systems manipulate digital
+audio through phase vocoding, autocorrelation, and formant preservation
+to deliver either transparent tonal accuracy or modern robotic vocal
+effects.</p>
+<h2 id="the-underlying-physics-of-pitch-detection">The Underlying
+Physics of Pitch Detection</h2>
+<p>To alter a vocal performance, the software must first identify the
+exact musical note being sung. Pitch correction algorithms achieve this
+by continuously measuring the fundamental frequency (<span
+class="math inline">\(f_0\)</span>) of the monophonic audio signal.</p>
+<ul>
+<li><strong>Autocorrelation:</strong> Used heavily in real-time
+processors, this method compares a segment of the waveform with a
+time-delayed copy of itself to identify repeating cycles. The duration
+of each repeating cycle dictates the fundamental frequency.</li>
+<li><strong>Spectral Analysis:</strong> Graphical editors often analyze
+audio within the frequency domain using Fast Fourier Transforms (FFT),
+mapping out harmonics and distinct note boundaries over time.</li>
+</ul>
+<p>Once the algorithm detects the incoming pitch, it calculates the
+difference between the sung frequency and the target note, measured in
+cents (1/100th of a semitone).</p>
+<h2 id="pitch-shifting-and-formant-preservation">Pitch Shifting and
+Formant Preservation</h2>
+<p>Altering pitch without changing playback speed requires specialized
+digital signal processing. Traditional tape speed manipulation shifts
+pitch, but it also alters duration and shifts vocal resonances
+(formants), creating an unnatural "chipmunk" or "monster" voice.</p>
+<p>Modern software uses phase vocoders and granular synthesis
+techniques:</p>
+<ol type="1">
+<li><strong>Phase Vocoding:</strong> The signal is broken down into
+small frequency bins, adjusting the phase and frequency components
+independently of time before reassembling the waveform.</li>
+<li><strong>Formant Correction:</strong> Formants represent the natural
+acoustic resonances of the human vocal tract. Advanced pitch correctors
+keep formant frequencies stationary while shifting the fundamental
+pitch, ensuring the singer's natural vocal timbre remains intact.</li>
+</ol>
+<h2 id="real-time-automatic-processing-auto-tune">Real-Time Automatic
+Processing (Auto-Tune)</h2>
+<p>Real-time processors like Antares Auto-Tune operate as dynamic
+inserts within a digital audio workstation (DAW) or live sound mixer.
+The user defines a target musical key, scale, and correction speed.</p>
+<p>The primary control governing the sound is <strong>Retune
+Speed</strong>:</p>
+<ul>
+<li><strong>Slow to Medium Speeds (20–50 ms):</strong> The software
+allows natural vocal transitions, vibrato, and slight pitch inflections
+to pass through untouched, correcting only sustained inaccuracies for a
+transparent result.</li>
+<li><strong>Zero Speed (0–5 ms):</strong> The software forces every
+detected frequency to snap instantly to the nearest scale degree. This
+eliminates natural glides and transitions between notes, creating the
+distinct, quantized hard-tune effect popularized in modern hip-hop, pop,
+and electronic music.</li>
+</ul>
+<h2 id="graphical-offline-editing-melodyne">Graphical Offline Editing
+(Melodyne)</h2>
+<p>Celemony Melodyne functions primarily as an offline, visual audio
+editor. Rather than applying a blanket algorithmic rule across a track,
+it captures the vocal performance and renders it as editable visual
+notes (often called "blobs") on a piano roll interface.</p>
+<ul>
+<li><strong>Independent Parameter Control:</strong> Producers can
+separately adjust center pitch, pitch drift (slow deviation over the
+length of a note), pitch modulation (vibrato depth), and timing
+placement.</li>
+<li><strong>Direct Note Access (DNA):</strong> Melodyne’s proprietary
+algorithm can separate polyphonic material into individual notes,
+allowing pitch and timing adjustments on complex sources such as
+acoustic guitars, backing vocal stacks, or choirs from a single audio
+track.</li>
+</ul>
+<h2 id="application-in-modern-music-production">Application in Modern
+Music Production</h2>
+<p>In modern vocal production, these tools serve both technical and
+aesthetic functions. Subtle correction tightens harmonies, corrects
+slight flat or sharp tendencies across long studio takes, and reduces
+the need for dozens of vocal re-recordings. Creatively, aggressive pitch
+quantization serves as a distinct sonic texture, reshaping modern pop
+and urban vocal styles into an instrument of its own.</p></article>
+        <div id=comments-container></div>
+
+        <script>
+            const utterancesScript = document.createElement('script');
+            
+            utterancesScript.setAttribute('src', 'https://utteranc.es/client.js');
+            utterancesScript.setAttribute('repo', 'salivity/music-production'); 
+            utterancesScript.setAttribute('issue-term', 'pathname'); 
+            utterancesScript.setAttribute('theme', localStorage.getItem('theme') === 'dark' ? 'github-dark' : 'github-light'); 
+            utterancesScript.setAttribute('crossorigin', 'anonymous');
+            utterancesScript.async = true;
+
+            document.getElementById('comments-container').appendChild(utterancesScript);
+        </script>
+    
+    </main>
+    <footer>
+        <nav>
+            <ul class="footer-links">
+                <li><a href="/music-production/privacy-policy">Privacy Policy</a></li>
+                <li><a href="/music-production/terms-and-conditions">Terms and Conditions</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            Copyright &copy; <span id="current-year"></span>
+        </div>
+    </footer>
+</body>
+</html>
